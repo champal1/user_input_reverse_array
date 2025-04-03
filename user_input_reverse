@@ -1,0 +1,49 @@
+import numpy as np
+#Reverse an array
+def main():
+    #Store the empty array
+    reverse_arr = []
+    #Print message asking the user to give a certain amount of numbers to be stored in the array
+    print("Hello im going to ask you to give me some numbers so I can reverse them in a list")
+    #While Loop to keep looping until the break, the break will be at the end after the code is executed
+    while True:
+        #Try is to be able to catch any errors and execute the code
+        try:
+            #Get user input on how many numbers you want in the array(reverse_arr)
+            #The how_much, will store the integer from the user to use later
+            how_much = int(input("How many numbers would you want for the array: "))
+            #If the number the user put is lower or equal to 0, ask user to enter a higher number
+            if how_much <= 0:
+                print("Enter a number higher than 0")
+            else:
+                #if the user enters a number higher than 0, break out of loop and execute the other code below
+                break
+        #If the user input is not a number, print message asking to try again
+        except ValueError:
+            print("Not a number, try again")
+    #Have a range that will loop depending on the amount the user wants to loop from the previous code
+    #If user puts 5, then this code will loop 5 times, how_much, has the stored integer
+    for i in range(how_much):
+        #have a while loop to loop until the the loop hits the number from how_much, if how_much is 5, loop 5 times
+        while True:
+            #use try to catch any error
+            try:
+                #Ask user for input on what numbers to add to the array
+                welcome_user = int(input("Welcome to your reverse array, enter a number: "))
+                #Add and update the array list
+                reverse_arr.append(welcome_user)
+                #break once the loop is done
+                break
+            #error is the user doesn't put a number
+            except ValueError:
+                print("Not a number, try again")
+    #Store the array, have the saved array be reversed using [::-1], it's better for the array to use this as
+    #this saves the stored data
+    list_rev = reverse_arr[::-1]
+    #print out the orignal list and the reversed list
+    print(f"Here is your normal list, {reverse_arr}")
+    print(f"Here is your reversed list, {list_rev}")
+
+
+if __name__ == "__main__":
+    main()
